@@ -7,7 +7,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 import { Graficas1Component } from './pages/graficas1/graficas1.component';
-import { NoPageFoundComponent } from './pages/no-page-found/no-page-found.component';
+import { NoPageFoundComponent } from './shared/no-page-found/no-page-found.component';
 import { RegisterComponent } from './login/register.component';
 
 
