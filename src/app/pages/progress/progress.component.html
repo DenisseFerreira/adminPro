@@ -1,1 +1,82 @@
-<p>progress works!</p>
+<!-- Barra de progreso -->
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+
+        <h5 class="card-title">Barra de progreso</h5>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+            [attr.ariaValueNow]="progreso" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
+            [style.width]="progreso+'%'"></div>
+          <!-- El div contiene atributos personalizados que no los conoce angular (aria-valuenow="50"
+            aria-valuemin="0" aria-valuemax="100" style="width: 75%")
+            por lo que se debe usar las llaves cuadradas anteponiendo el 'attr', estas llaves indican
+            que angular se hara cargo-->
+        </div>
+        <br>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
+            [attr.ariaValueNow]="progreso" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
+            [style.width]="progreso+'%'"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FIN Barra de progreso -->
+
+
+<!-- Incrementadores -->
+
+<div class="row">
+
+  <!-- Primera seccion -->
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+
+
+
+        <app-incrementador></app-incrementador>
+
+
+
+        <!-- Antes tenia la barra de progreso aqui, luego fue cambiada a otra carpeta y es llamada
+  por el app-incrementador(ahi se carga)
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button class="btn btn-outline-secondary" type="button" (click)="cambiarValor(-5)">
+                <i class="mdi mdi-minus"></i>
+            </button>
+          </span>
+          <input type="text" class="form-control" name="progreso" [(ngModel)]="progreso">
+       
+                <span class="input-group-btn">
+            <button class="btn btn-outline-secondary" type="button" (click)="cambiarValor(+5)">
+                    <i class="mdi mdi-plus"></i>
+            </button>
+                </span>
+         </div> -->
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SEgunda seccion -->
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+
+        <app-incrementador></app-incrementador>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- FIN Incrementadores -->
