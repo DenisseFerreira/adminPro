@@ -8,7 +8,7 @@
       <i class="mdi mdi-minus"></i>
     </button>
   </span>
-  <input type="text" class="form-control" name="progreso" [(ngModel)]="progreso">
+  <input #txtProgress type="number" class="form-control" name="progreso" [(ngModel)]="progreso" (ngModelChange)="onChanges( $event )" min="1" max="100">
   <!-- <div class="input-group-append" id="button-addon4"> -->
   <span class="input-group-btn">
     <button class="btn btn-outline-secondary" type="button" (click)="cambiarValor(+5)">
