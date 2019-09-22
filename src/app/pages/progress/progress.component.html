@@ -1,1 +1,74 @@
-<p>progress works!</p>
+<!-- Barra de progreso -->
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+
+        <h5 class="card-title">Barra de progreso</h5>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+            [attr.ariaValueNow]="progreso1" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
+            [style.width]="progreso1+'%'"></div>
+          <!-- El div contiene atributos personalizados que no los conoce angular (aria-valuenow="50"
+            aria-valuemin="0" aria-valuemax="100" style="width: 75%")
+            por lo que se debe usar las llaves cuadradas anteponiendo el 'attr', estas llaves indican
+            que angular se hara cargo-->
+        </div>
+
+        <br>
+ 
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
+            [attr.ariaValueNow]="progreso2" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
+            [style.width]="progreso2+'%'"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FIN Barra de progreso -->
+
+
+
+<!-- Incrementadores -->
+
+<div class="row">
+
+  <!-- Primera seccion -->
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+
+        <!-- [progreso] = '20' va en llaves cuadradas para que lo reciba como number -->
+        <!--  leyenda = "Progreso en azul" va sin llaves porque lo que quiero enviar ira
+          de forma literal y como string....-->
+
+        <!-- Las llaves cuadradas las puedo asociar a una variable -->
+        <!-- cambio leyenda por nombre y asi cambiar desde aca afuera el nombre
+        que yo quiero para mis atributos personalizados -->
+
+        <app-incrementador (cambioValor)= "progreso1 = $event" nombre = "Progreso en azul" [progreso] = 'progreso1'></app-incrementador>
+
+        <!-- Antes tenia la barra de progreso aqui, luego fue cambiada a otra carpeta y es llamada
+        por el app-incrementador(ahi se carga) -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Segunda seccion -->
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+
+        <app-incrementador (cambioValor)= "progreso2 = $event" nombre = "Progreso en verde" [progreso] = 'progreso2'></app-incrementador>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- FIN Incrementadores -->
