@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 
 //Temporal
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
+import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
         DashboardComponent,
         ProgressComponent,
         Graficas1Component,
-        IncrementadorComponent
+        IncrementadorComponent,
+        AccoutSettingsComponent
     ],
     exports : [
         PagesComponent,

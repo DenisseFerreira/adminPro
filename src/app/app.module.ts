@@ -15,6 +15,9 @@ import { RegisterComponent } from './login/register.component';
 //temporal, debo sacarlo pronto
 import { FormsModule } from '@angular/forms';
 
+//Servicios
+import { SettingsService } from './services/settings.service';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,7 @@ import { FormsModule } from '@angular/forms';
     PagesModule,
     FormsModule
   ],
-  providers: [],
+  providers: [SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
