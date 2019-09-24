@@ -9,8 +9,7 @@ import { SettingsService } from 'src/app/services/settings.service';
 })
 export class AccoutSettingsComponent implements OnInit {
 
-  constructor( @Inject(DOCUMENT) private _document,
-              public _ajustes: SettingsService) { }
+  constructor(public _ajustes: SettingsService) { }
 
   ngOnInit() {
   }
@@ -21,14 +20,8 @@ export class AccoutSettingsComponent implements OnInit {
 
     this.aplicarCheck( link );
 
+this._ajustes.aplicarTema(tema);
 
- /* Debo declarar una variable que contenga el path de lo que 
- necesito en el css (lo contiene el index.html), asi de esta forma puedo 
- acceder a el y modificarlo.
- Para ello uso `` para template literal  */   
-    let url = `assets/css/colors/${ tema }.css`;
-    // this._document.getElementById('tema').setAttribute('href', tema + '.css');
-    this._document.getElementById('tema').setAttribute('href', url);
   }
 
   aplicarCheck( link : any ){
@@ -41,5 +34,19 @@ export class AccoutSettingsComponent implements OnInit {
      }
      link.classList.add('working');
   }
+
+  colocarCheck(){
+
+    let selectores : any = document.getElementsByClassName('selector');
+    let tema = this._ajustes.ajustes.tema;
+
+    for ( let ref of selectores){
+     if (ref.getAttribute('data-theme') === tema ){
+      ref.classList.add('working');
+      break;
+     }
+    }
+  }
+  
 
 }
